@@ -1,1 +1,4 @@
 env
+mongodbtest.py
+secrets.sh
+.DS_Store
