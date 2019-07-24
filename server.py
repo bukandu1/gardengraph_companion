@@ -1,6 +1,7 @@
 from flask import (Flask, session, redirect, render_template, flash, 
                     request, url_for, jsonify)
-import mongoengine
+import mongoengine as db
+
 from plants import Plants
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ app.secret_key = os.environ['FLASK_SESSION_KEY']
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 @app.route('/', methods=["GET"])
-def display_login():
+def display_homepage():
     """Home page for Garden Graph app"""
     return render_template("homepage.html")
 
@@ -30,4 +31,7 @@ def main():
         return
 
 if __name__ == '__main__':
-    main()
+    DebugToolbarExtension(app)
+
+    #connect to db
+    db.connect(alias='gardengraph', db='gardengraph', host='mongodb://localhost/gardengraph')
