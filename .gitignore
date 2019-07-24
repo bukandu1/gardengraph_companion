@@ -3,3 +3,4 @@ mongodbtest.py
 mongodb_setup.py
 secrets.sh
 .DS_Store
+__pycache__/

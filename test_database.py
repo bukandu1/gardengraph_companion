@@ -10,7 +10,8 @@ class TestSolution(unittest.TestCase):
 
     def test_db_plant_creation(unittest.TestCase):
         # Retrieve one random plant from db. Should be a plant object
-        self.assertIsInstance()
+        result = 
+        self.assertIsInstance(, plant)
 
 if __name__ == '__main__':
     # If called like a script, run our tests

@@ -20,7 +20,7 @@ class Plant(db.Document):
 
     def clean(self):
         """Ensures that if friend is added, not contained in foes array"""
-        if self.status == 'Draft' and self.friends is not None:
+        if self.plant_friends:
             for plant in self.plant_friends:
                 if plant in set(self.plant_foes):
                     msg = f'{plant} is in foe list. Please update appropriate list.'
